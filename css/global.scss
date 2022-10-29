@@ -5,6 +5,10 @@
     font-family: 'Verdana', sans-serif;
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 h2 {
     color: $hero-navy;
 }
@@ -28,9 +32,6 @@ ul {
 }
 
 header {
-    z-index: 1;
-    position: sticky;
-    top: 0;
     box-sizing: border-box;
     padding: 0 5vw;
     background-color: rgba($color: white, $alpha: 0.8);
@@ -61,10 +62,14 @@ header {
         justify-content: space-between;
 
         li {
-            padding: 0.5vh 0;
+            padding: 0.5em 0;
             text-align: center;
             border-bottom: 3px solid rgba($color: white, $alpha: 0);
             transition: border 200ms ease-out;
+
+            a {
+                padding: 1em 0;
+            }
 
             &:hover {
                 border-bottom: 3px solid rgba($color: $hero-orange, $alpha: 0.6);

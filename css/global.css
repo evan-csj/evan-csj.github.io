@@ -3,6 +3,10 @@
   font-family: "Verdana", sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 h2 {
   color: #335576;
 }
@@ -26,10 +30,6 @@ ul {
 }
 
 header {
-  z-index: 1;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   box-sizing: border-box;
   padding: 0 5vw;
   background-color: rgba(255, 255, 255, 0.8);
@@ -62,10 +62,13 @@ header ul {
   justify-content: space-between;
 }
 header ul li {
-  padding: 0.5vh 0;
+  padding: 0.5em 0;
   text-align: center;
   border-bottom: 3px solid rgba(255, 255, 255, 0);
   transition: border 200ms ease-out;
+}
+header ul li a {
+  padding: 1em 0;
 }
 header ul li:hover {
   border-bottom: 3px solid rgba(219, 122, 78, 0.6);
