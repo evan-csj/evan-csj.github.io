@@ -1,0 +1,133 @@
+@use "./partials/global" as *;
+
+header {
+    background-color: $nitro-pink;
+}
+
+.hero {
+    background-image: url('../assets/images/coffee-circle.jpg');
+    max-width: 100%;
+    max-height: 600px;
+    min-width: 100%;
+    min-height: 575px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .title-bg {
+        position: relative;
+        box-sizing: border-box;
+        text-align: center;
+        max-width: 300px;
+        max-height: 180px;
+        min-width: 280px;
+        min-height: 180px;
+        background-color: transparent;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: white;
+            z-index: 1;
+        }
+
+        &__border {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 5px solid $nitro-blue;
+            background-color: transparent;
+            z-index: 1;
+        }
+
+        &__shadow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 10px;
+            top: 10px;
+            background-color: $graphite;
+            border: 5px solid $graphite;
+            transition: transform $td;
+        }
+
+        &__border:hover + div {
+            transform: translate(-15px, -15px);
+        }
+    }
+}
+
+.nav-menu {
+    text-align: center;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: max-content;
+    background-color: $graphite;
+    color: white;
+
+    ul {
+        margin: auto 0;
+        padding: 20px;
+        justify-content: center;
+        column-gap: 1em;
+
+        li {
+            a {
+                padding-left: 1em;
+                display: inline-block;
+                color: white;
+                text-transform: uppercase;
+                border-left: 4px solid $nitro-blue;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 650px) {
+        ul {
+            margin-left: 5vw;
+            align-items: flex-start;
+            flex-direction: column;
+            row-gap: 0.5em;
+        }
+    }
+}
+
+main {
+    section {
+        h2 {
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
+        &:nth-child(2n+1) {
+            background-color: $nitro-pink;
+        }
+
+        &:nth-child(2n) {
+            background-color: $light-gray;
+        }
+
+        h2, h3 {
+            text-align: center;
+        }
+
+        .description {
+            margin: 0 auto;
+            max-width: 500px;
+            text-align: center;
+            padding: 0 50px;
+        }
+
+        .price {
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
+    }
+}
