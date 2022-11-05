@@ -6,7 +6,43 @@ $graphite: #393939;
 $primary: $graphite;
 $secondary: white;
 $highlight: $nitro-blue;
-$td: 300ms;
+$td: 150ms;
+
+@mixin phone {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes flash {
+    0% {
+        border-color: $nitro-blue;
+        background-color: $nitro-blue;
+    }
+    50% {
+        border-color: $graphite;
+        background-color: $graphite;
+    }
+    100% {
+        border-color: $nitro-blue;
+        background-color: $nitro-blue;
+    }
+}
 
 * {
     margin: 0;
@@ -50,6 +86,12 @@ a {
 .icon {
     min-width: 50px;
     max-width: 120px;
+}
+
+.background-icon {
+    width: 120px;
+    opacity: 0.25;
+    padding: 20px;
 }
 
 .product-img {
@@ -106,7 +148,7 @@ a {
         }
     }
 
-    @media only screen and (max-width: 650px) {
+    @include phone {
         flex-flow: column wrap;
         nav {
             padding-left: 52px;
@@ -164,11 +206,13 @@ a {
 }
 
 footer {
+    position: relative;
+    overflow: hidden;
     background-color: $nitro-pink;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    column-gap: 12%;
+    column-gap: 15%;
     row-gap: 30px;
     padding: 5% 5vw 5% 12vw;
 
@@ -196,28 +240,15 @@ footer {
             flex-wrap: nowrap;
         }
     }
-}
 
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
+    .footer-top-left {
+        position: absolute;
+        top: 0;
+        left: -60px;
     }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes flash {
-    0% {
-        border-color: $nitro-blue;
-        background-color: $nitro-blue;
-    }
-    50% {
-        border-color: $graphite;
-        background-color: $graphite;
-    }
-    100% {
-        border-color: $nitro-blue;
-        background-color: $nitro-blue;
+    .footer-bottom-right {
+        position: absolute;
+        bottom: 0;
+        right: -60px;
     }
 }
